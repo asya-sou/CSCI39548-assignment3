@@ -1,7 +1,7 @@
 # CSCI39548-assignment3
 GROUP: Asya (Anastasia) Soughou (asya-sou) <br/>
 assignement code skeleton https://gist.github.com/mtlynch3/5f1f86199a3ddb12d137f9d2fe8d1900 <br/>
-based a page where user can
+based a page where user can <br/>
 --add rows to the grid <br/>
 --add columns to the grid <br/>
 --remove rows from the grid <br/>
