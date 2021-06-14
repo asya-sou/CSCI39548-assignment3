@@ -19,25 +19,27 @@ var grid = document.getElementById('grid'); //selected table
 
 
 //---------------------------------------------//
-var global = this;
-let numRows = 6;
-let numCols = 3;
+let numRows = 0;
+let numCols = 0;
 let colorSelected; 
 
 //Adds a row
 function addR() {
-    let rows = document.getElementById("numRows");
+    //let rows = document.getElementById("numRows");
+    alert(numRows);
 
-    alert('rows ' + numRows);
+    //alert('rows ' + numRows);
     let row = grid.insertRow();
-    table.appendChild(row);
-    for (let i = 0; i < numCol; i++){
+    grid.appendChild(row);
+    
+    for (let i = 0; i < numCols; i++){
         let cell = row.insertCell(i);
         let text = document.createTextNode('TEXT');
         cell.appendChild(text);
     }
-    rows++;
-    document.getElementById("numRows").value=rows;
+    numRows += 1;
+    //let rows = this.numRows + 1;
+    //document.getElementById("numRows").value=rows;
 }
 /*
 function addR() {
