@@ -35,7 +35,7 @@ function addR() {
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(i); //define a cell
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>remove/replace text node? 
-        let text = document.createTextNode('TEXT'); 
+        let text = document.createTextNode(':)'); 
         cell.appendChild(text);
     }
     numRows += 1;//update number of rows (add 1)
