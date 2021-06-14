@@ -14,9 +14,16 @@
 // Node.lastElementChild - return last child element of an element
 // document.querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.
 
+//testing base logic for row/cell creation 
 let grid = document.getElementByTagName('grid'); //selected table
 
-var tr = tbl.createElement('tr');
+var tr = document.createElement('tr');
+var td = document.createElement('td');
+tr[0].appendChild(td);
+tr[1].appendChild(td);
+tr[3].appendChild(td);
+
+//---------------------------------------------//
 
 let numRows = 0;
 let numCols = 0;
