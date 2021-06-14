@@ -13,26 +13,43 @@
 // Node.childNodes - will contain all child elements &non-elements of an el on which called
 // Node.lastElementChild - return last child element of an element
 // document.querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.
-
+  
 //testing base logic for row/cell creation 
-let grid = document.getElementByTagName('grid'); //selected table
+var grid = document.getElementById('grid'); //selected table
 
-var tr = document.createElement('tr');
-var td = document.createElement('td');
-tr[0].appendChild(td);
-tr[1].appendChild(td);
-tr[3].appendChild(td);
 
 //---------------------------------------------//
-
-let numRows = 0;
-let numCols = 0;
+var global = this;
+let numRows = 6;
+let numCols = 3;
 let colorSelected; 
 
 //Adds a row
 function addR() {
-    alert("Clicked Add Row")
+    let rows = document.getElementById("numRows");
+
+    alert('rows ' + numRows);
+    let row = grid.insertRow();
+    table.appendChild(row);
+    for (let i = 0; i < numCol; i++){
+        let cell = row.insertCell(i);
+        let text = document.createTextNode('TEXT');
+        cell.appendChild(text);
+    }
+    rows++;
+    document.getElementById("numRows").value=rows;
 }
+/*
+function addR() {
+    let tr = table.createElement('tr');
+    table.appendChild(tr);
+    for (let i = 0; i < 3; i++){
+        let td = table.createElement('td');
+        let text = document.createTextNode("TEXT");
+        td[i].appendChild(text);
+    }
+}*/
+
 //Adds a column
 function addC() {
     alert("Clicked Add Col")
