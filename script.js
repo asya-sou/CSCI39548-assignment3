@@ -12,4 +12,9 @@
 // use appendChild() to attach
 // Node.childNodes - will contain all child elements &non-elements of an el on which called
 // Node.lastElementChild - return last child element of an element
+// document.querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.
+
+let grid = document.getElementByTagName('grid'); //selected table
+
+
 
