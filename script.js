@@ -25,32 +25,22 @@ let colorSelected;
 
 //Adds a row
 function addR() {
-    //let rows = document.getElementById("numRows");
-    alert(numRows);
+//>>>>>>>>>>>>>>>>>>>>>>> remove alert
+    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    numCols = (numCols === 0) ? 1 : numCols; //if 0 columns, set to 1
 
-    //alert('rows ' + numRows);
-    let row = grid.insertRow();
-    grid.appendChild(row);
-    
-    for (let i = 0; i < numCols; i++){
-        let cell = row.insertCell(i);
-        let text = document.createTextNode('TEXT');
+    let row = grid.insertRow();//define row
+    grid.appendChild(row); //add to grid
+
+    for (let i = 0; i < numCols; i++){ //for every column
+        let cell = row.insertCell(i); //define a cell
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>remove/replace text node? 
+        let text = document.createTextNode('TEXT'); 
         cell.appendChild(text);
     }
-    numRows += 1;
-    //let rows = this.numRows + 1;
-    //document.getElementById("numRows").value=rows;
+    numRows += 1;//update number of rows (add 1)
+   
 }
-/*
-function addR() {
-    let tr = table.createElement('tr');
-    table.appendChild(tr);
-    for (let i = 0; i < 3; i++){
-        let td = table.createElement('td');
-        let text = document.createTextNode("TEXT");
-        td[i].appendChild(text);
-    }
-}*/
 
 //Adds a column
 function addC() {
