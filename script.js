@@ -66,7 +66,9 @@ function removeR() {
         let lastRowI = numRows - 1;//set index to last row number
 
         grid.deleteRow(lastRowI);//removes LAST row
+
         numRows -= 1; //decrease number of rows
+        numCols = (numRows === 0)? 0 : numCols;
     }
     else
         alert('nothing to remove!')
