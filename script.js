@@ -34,7 +34,6 @@ function addR() {
 
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(i); //define a cell
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>remove/replace text node? 
         let text = document.createTextNode(':)'); 
         cell.appendChild(text);
     }
@@ -60,14 +59,24 @@ function addC() {
     }
 }
 
-//Removes a row
+//------------------------------Removes a row ------------------------------//
 function removeR() {
-    alert("Clicked Remove Row")
+    if (numRows > 0) {//if there is smth to delete
+        let lastRowI = numRows - 1;//set index to last row number
+
+        grid.deleteRow(lastRowI);//removes LAST row
+
+        numRows -= 1; //decrease number of rows
+        numCols = (numRows === 0)? 0 : numCols;
+    }
 }
-//Remove a column
+
+//------------------------------Removes a column ------------------------------//
 function removeC() {
     alert("Clicked Remove Col")
 }
+
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
