@@ -44,7 +44,10 @@ function addR() {
 
 //Adds a column
 function addC() {
-    alert("Clicked Add Col")
+//>>>>>>>>>>>>>>>>>>>>>>> remove alert
+    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    numRows = (numRows === 0) ? grid.addR() : numRows;
+
 }
 
 //Removes a row
