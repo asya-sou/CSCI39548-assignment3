@@ -23,7 +23,7 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
-//Adds a row
+//------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
     alert('bf call: rows ' +  numRows + ' cols ' + numCols);
@@ -42,9 +42,22 @@ function addR() {
    
 }
 
-//Adds a column
+//------------------------------Adds a column ------------------------------//
 function addC() {
-    alert("Clicked Add Col")
+//>>>>>>>>>>>>>>>>>>>>>>> remove alert
+    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    if (numRows === 0) { //if no wows yet - create one
+        addR();
+    }
+
+    else {
+        for (let i = 0; i < numRows; i++) { //for every row 
+            let cell = grid.rows[i].insertCell(i); //add a cell
+            let text = document.createTextNode(':)'); 
+            cell.appendChild(text);
+        }
+        numCols += 1;//update number of cols (add 1)
+    }
 }
 
 //Removes a row
