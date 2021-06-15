@@ -46,20 +46,18 @@ function addR() {
 function addC() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
     //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
-    if (numRows === 0) {
+    if (numRows === 0) { //if no wows yet - create one
         addR();
     }
 
-    else if (numRows >= 1 ) {
-        alert('first col run');
-        for (let i = 0; i < numRows; i++) {
-            let cell = grid.rows[i].insertCell(i);
+    else {
+        for (let i = 0; i < numRows; i++) { //for every row 
+            let cell = grid.rows[i].insertCell(i); //add a cell
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
         }
         numCols += 1;//update number of cols (add 1)
     }
-
 }
 
 //Removes a row
