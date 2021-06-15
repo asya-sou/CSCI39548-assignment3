@@ -60,14 +60,20 @@ function addC() {
     }
 }
 
-//Removes a row
+//------------------------------Removes a row ------------------------------//
 function removeR() {
-    alert("Clicked Remove Row")
+    let lastRowI = numRows - 1;
+
+    grid.deleteRow(lastRowI);//removes LAST row
+    numRows -= 1;
 }
-//Remove a column
+
+//------------------------------Removes a column ------------------------------//
 function removeC() {
     alert("Clicked Remove Col")
 }
+
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
