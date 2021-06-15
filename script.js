@@ -50,14 +50,15 @@ function addC() {
             let cell = grid.rows[i].insertCell(i); //add a cell
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
+            numCols += 1;//update number of cols (add 1)
+
         }
     }
     
     else if (numRows === 0) { //if no rows yet - create one
         addR();
     }
- 
-    numCols += 1;//update number of cols (add 1)
+
 }
 
 //------------------------------Removes last row ------------------------------//
