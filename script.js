@@ -49,16 +49,17 @@ function addC() {
     if (numRows === 0) {
         addR();
     }
-    else {
-        let row = grid.rows[0];//set row to first row
 
+    else if (numRows >= 1 ) {
+        alert('first col run');
         for (let i = 0; i < numRows; i++) {
-            let cell = grid.rows[i].insertCell(0);
+            let cell = grid.rows[i].insertCell(i);
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
         }
+        numCols += 1;//update number of cols (add 1)
     }
-    numCols += 1;//update number of cols (add 1)
+
 }
 
 //Removes a row
