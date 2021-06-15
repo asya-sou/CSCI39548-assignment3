@@ -26,7 +26,7 @@ let colorSelected;
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     numCols = (numCols === 0) ? 1 : numCols; //if 0 columns, set to 1
 
     let row = grid.insertRow();//define row
@@ -34,7 +34,6 @@ function addR() {
 
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(i); //define a cell
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>remove/replace text node? 
         let text = document.createTextNode(':)'); 
         cell.appendChild(text);
     }
