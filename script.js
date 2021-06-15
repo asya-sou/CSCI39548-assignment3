@@ -62,10 +62,14 @@ function addC() {
 
 //------------------------------Removes a row ------------------------------//
 function removeR() {
-    let lastRowI = numRows - 1;
+    if (numRows > 0) {//if there is smth to delete
+        let lastRowI = numRows - 1;//set index to last row number
 
-    grid.deleteRow(lastRowI);//removes LAST row
-    numRows -= 1;
+        grid.deleteRow(lastRowI);//removes LAST row
+        numRows -= 1; //decrease number of rows
+    }
+    else
+        alert('nothing to remove!')
 }
 
 //------------------------------Removes a column ------------------------------//
