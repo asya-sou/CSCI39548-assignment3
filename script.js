@@ -26,7 +26,7 @@ let colorSelected;
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     //numCols = (numCols === 0)? 1 : numCols; //if 0 columns, set to 1
     if (numCols === 0) {numCols = 1}; //if 0 columns, set to 1
 
@@ -67,14 +67,29 @@ function removeR() {
 
         grid.deleteRow(lastRowI);//removes LAST row
 
-        numRows -= 1; //decrease number of rows
+        numRows--; //decrease number of rows
         numCols = (numRows === 0)? 0 : numCols; //if no rows left - set cols to 0
     }
 }
 
-//------------------------------Removes a column ------------------------------//
+//------------------------------Removes last column ------------------------------//
 function removeC() {
-    alert("Clicked Remove Col")
+    if (numCols > 0) { //if there is something to delete
+        let lastCellI = numCols -1; //set index to last col 
+
+        for (let i=0; i < numRows; i++){//for every row
+        grid.rows[i].deleteCell(lastCellI); //removes LAST cell}
+        }
+
+        numCols--; 
+    }
+
+    if (numCols === 0 ) { // if one column left, delete all rows
+        for (let i = numRows; i > 0; i--) {
+            removeR();
+        }
+        
+    }
 }
 
 
