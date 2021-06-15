@@ -26,7 +26,7 @@ let colorSelected;
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     numCols = (numCols === 0) ? 1 : numCols; //if 0 columns, set to 1
 
     let row = grid.insertRow();//define row
@@ -70,8 +70,6 @@ function removeR() {
         numRows -= 1; //decrease number of rows
         numCols = (numRows === 0)? 0 : numCols;
     }
-    else
-        alert('nothing to remove!')
 }
 
 //------------------------------Removes a column ------------------------------//
