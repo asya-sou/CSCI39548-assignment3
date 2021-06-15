@@ -67,14 +67,22 @@ function removeR() {
 
         grid.deleteRow(lastRowI);//removes LAST row
 
-        numRows -= 1; //decrease number of rows
+        numRows--; //decrease number of rows
         numCols = (numRows === 0)? 0 : numCols; //if no rows left - set cols to 0
     }
 }
 
-//------------------------------Removes a column ------------------------------//
+//------------------------------Removes last column ------------------------------//
 function removeC() {
-    alert("Clicked Remove Col")
+    if (numCols > 0) { //if there is something to delete
+        let lastCellI = numCols -1; //set index to last col 
+
+        for (let i=0; i < numRows, i++){
+        grid.rows[i].deleteCell(lastCellI); //removes LAST cell}
+        }
+
+        numCols--; 
+    }
 }
 
 
