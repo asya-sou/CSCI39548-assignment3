@@ -74,7 +74,7 @@ function removeR() {
 
 //------------------------------Removes last column ------------------------------//
 function removeC() {
-    if (numCols > 1) { //if there is something to delete, but at least 1 col left
+    if (numCols > 0) { //if there is something to delete
         let lastCellI = numCols -1; //set index to last col 
 
         for (let i=0; i < numRows; i++){//for every row
@@ -84,7 +84,7 @@ function removeC() {
         numCols--; 
     }
 
-    if (numCols === 1 ) { // if one column left, delete all rows
+    if (numCols === 0 ) { // if one column left, delete all rows
         for (let i = numRows; i > 0; i--) {
             removeR();
         }
