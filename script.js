@@ -23,7 +23,7 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
-//Adds a row
+//------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
     alert('bf call: rows ' +  numRows + ' cols ' + numCols);
@@ -42,11 +42,22 @@ function addR() {
    
 }
 
-//Adds a column
+//------------------------------Adds a column ------------------------------//
 function addC() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
-    numRows = (numRows === 0) ? grid.addR() : numRows;
+    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    if (numRows === 0) {
+        addR();
+    }
+    else {
+        let row = grid.rows[0];//set row to first row
+
+        for (let i = 0; i < numRows; i++) {
+            let cell = row.insertCell(0);
+            let text = document.createTextNode(':)'); 
+            cell.appendChild(text);
+        }
+    }
 
 }
 
