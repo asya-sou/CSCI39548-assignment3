@@ -26,7 +26,7 @@ let colorSelected;
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     //numCols = (numCols === 0)? 1 : numCols; //if 0 columns, set to 1
     if (numCols === 0) {numCols = 1}; //if 0 columns, set to 1
 
