@@ -48,7 +48,7 @@ function addC() {
     //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     if (numRows > 0) {
         for (let i = 0; i < numRows; i++) { //for every row 
-            let cell = grid.rows[i].insertCell(0); //add a cell
+            let cell = grid.rows[i].insertCell(); //add a cell
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
 
