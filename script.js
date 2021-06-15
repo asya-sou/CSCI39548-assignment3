@@ -53,12 +53,12 @@ function addC() {
         let row = grid.rows[0];//set row to first row
 
         for (let i = 0; i < numRows; i++) {
-            let cell = row.insertCell(0);
+            let cell = grid.rows[i].insertCell(0);
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
         }
     }
-
+    numCols += 1;//update number of cols (add 1)
 }
 
 //Removes a row
