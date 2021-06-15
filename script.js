@@ -26,7 +26,7 @@ let colorSelected;
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     numCols = (numCols === 0) ? 1 : numCols; //if 0 columns, set to 1
 
     let row = grid.insertRow();//define row
@@ -45,21 +45,22 @@ function addR() {
 function addC() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
     //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
-    if (numRows === 0) { //if no wows yet - create one
-        addR();
-    }
-
-    else {
+    if (numRows > 0) {
         for (let i = 0; i < numRows; i++) { //for every row 
             let cell = grid.rows[i].insertCell(i); //add a cell
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
         }
-        numCols += 1;//update number of cols (add 1)
     }
+    
+    else if (numRows === 0) { //if no rows yet - create one
+        addR();
+    }
+ 
+    numCols += 1;//update number of cols (add 1)
 }
 
-//------------------------------Removes a row ------------------------------//
+//------------------------------Removes last row ------------------------------//
 function removeR() {
     if (numRows > 0) {//if there is smth to delete
         let lastRowI = numRows - 1;//set index to last row number
@@ -67,7 +68,7 @@ function removeR() {
         grid.deleteRow(lastRowI);//removes LAST row
 
         numRows -= 1; //decrease number of rows
-        numCols = (numRows === 0)? 0 : numCols;
+        numCols = (numRows === 0)? 0 : numCols; //if no rows left - set cols to 0
     }
 }
 
