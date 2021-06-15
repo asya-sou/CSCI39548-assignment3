@@ -26,8 +26,9 @@ let colorSelected;
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
-    numCols = (numCols === 0) ? 1 : numCols; //if 0 columns, set to 1
+    alert('bf call: rows ' +  numRows + ' cols ' + numCols);
+    //numCols = (numCols === 0)? 1 : numCols; //if 0 columns, set to 1
+    if (numCols === 0) {numCols = 1};
 
     let row = grid.insertRow();//define row
     grid.appendChild(row); //add to grid
@@ -37,7 +38,7 @@ function addR() {
         let text = document.createTextNode(':)'); 
         cell.appendChild(text);
     }
-    numRows += 1;//update number of rows (add 1)
+    numRows++;//update number of rows
    
 }
 
@@ -47,11 +48,11 @@ function addC() {
     //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     if (numRows > 0) {
         for (let i = 0; i < numRows; i++) { //for every row 
-            let cell = grid.rows[i].insertCell(i); //add a cell
+            let cell = grid.rows[i].insertCell(0); //add a cell
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
-            numCols += 1;//update number of cols (add 1)
 
+            numCols++;//update number of cols
         }
     }
     
