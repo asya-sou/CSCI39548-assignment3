@@ -102,7 +102,8 @@ function selected(){
 
 function fill(){
     //alert("Clicked Fill All")
-    document.getElementsByTagName('td').style.background = "green";
+    let cells = document.getElementsByTagName('td')
+    cells[1].style.background = "green";
     //cells[1].style.backgroundColor = "green";  
       /*
     for (let i = 0; i < numRows; i++) {
