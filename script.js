@@ -103,6 +103,7 @@ function fill(){
     let cells = document.getElementsByTagName('td')
     for (let i = 0; i < (numCols * numRows); i++){
         cells[i].style.background = colorSelected;
+        cells[i].id = colorSelected;
     }
 
 }
@@ -115,7 +116,9 @@ function fillU(){
     //alert("Clicked Fill All Uncolored")
     let cells = document.getElementsByTagName('td')
     for (let i = 0; i < (numCols * numRows); i++){
-        cells[i].style.background = colorSelected;
+        if(cells[i].id ==='')
+            cells[i].style.background = colorSelected;
+            cells[i].id = colorSelected;
     }
 
 }
