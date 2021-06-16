@@ -17,12 +17,10 @@
 //testing base logic for row/cell creation 
 var grid = document.getElementById('grid'); //selected table
 
-
 //---------------------------------------------//
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
-
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
@@ -107,13 +105,13 @@ function fill(){
     }
 
 }
-//------------------------------ sets cell bg color to base ------------------------------//
+//------------------------------ sets all cell bg color to white ------------------------------//
 function clearAll(){
     var cells = document.getElementsByTagName('td') //get cells by tag name
 
     for (let i = 0; i < (numCols * numRows); i++){ //for every cell
         if(cells[i].id !=='')//if cell id not empty
-            cells[i].style.background = "white"; //change background color to selected
+            cells[i].style.background = 'white'; //change background color to selected
             cells[i].id = ''; //assign color id
     }
 }
