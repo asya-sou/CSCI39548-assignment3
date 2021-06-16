@@ -114,11 +114,12 @@ function clearAll(){
 //------------------------------ Changes colors of Uncolored cells to color selected ------------------------------//
 function fillU(){
     //alert("Clicked Fill All Uncolored")
-    let cells = document.getElementsByTagName('td')
-    for (let i = 0; i < (numCols * numRows); i++){
-        if(cells[i].id ==='')
-            cells[i].style.background = colorSelected;
-            cells[i].id = colorSelected;
+    let cells = document.getElementsByTagName('td') //get cells by tag name
+
+    for (let i = 0; i < (numCols * numRows); i++){ //for every cell
+        if(cells[i].id ==='')//if cell id empty
+            cells[i].style.background = colorSelected; //change background color to selected
+            cells[i].id = colorSelected; //assign color id
     }
 
 }
