@@ -17,12 +17,10 @@
 //testing base logic for row/cell creation 
 var grid = document.getElementById('grid'); //selected table
 
-
 //---------------------------------------------//
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
-
 //------------------------------Adds a row ------------------------------//
 function addR() {
 //>>>>>>>>>>>>>>>>>>>>>>> remove alert
@@ -100,21 +98,28 @@ function selected(){
 
 //------------------------------ Changes colors of ALL cells to color selected ------------------------------//
 function fill(){
-    let cells = document.getElementsByTagName('td')
+    var cells = document.getElementsByTagName('td')
     for (let i = 0; i < (numCols * numRows); i++){
         cells[i].style.background = colorSelected;
         cells[i].id = colorSelected;
     }
 
 }
-
+//------------------------------ sets all cell bg color to white ------------------------------//
 function clearAll(){
-    alert("Clicked Clear All")
+    var cells = document.getElementsByTagName('td') //get cells by tag name
+
+    for (let i = 0; i < (numCols * numRows); i++){ //for every cell
+        if(cells[i].id !=='')//if cell id not empty
+            cells[i].style.background = 'white'; //change background color to selected
+            cells[i].id = ''; //assign color id
+    }
 }
+
 //------------------------------ Changes colors of Uncolored cells to color selected ------------------------------//
 function fillU(){
     //alert("Clicked Fill All Uncolored")
-    let cells = document.getElementsByTagName('td') //get cells by tag name
+    var cells = document.getElementsByTagName('td') //get cells by tag name
 
     for (let i = 0; i < (numCols * numRows); i++){ //for every cell
         if(cells[i].id ==='')//if cell id empty
