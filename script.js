@@ -103,6 +103,7 @@ function fill(){
     let cells = document.getElementsByTagName('td')
     for (let i = 0; i < (numCols * numRows); i++){
         cells[i].style.background = colorSelected;
+        cells[i].id = colorSelected;
     }
 
 }
@@ -110,7 +111,15 @@ function fill(){
 function clearAll(){
     alert("Clicked Clear All")
 }
-
+//------------------------------ Changes colors of Uncolored cells to color selected ------------------------------//
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    //alert("Clicked Fill All Uncolored")
+    let cells = document.getElementsByTagName('td') //get cells by tag name
+
+    for (let i = 0; i < (numCols * numRows); i++){ //for every cell
+        if(cells[i].id ==='')//if cell id empty
+            cells[i].style.background = colorSelected; //change background color to selected
+            cells[i].id = colorSelected; //assign color id
+    }
+
 }
