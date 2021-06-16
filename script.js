@@ -60,7 +60,7 @@ function addC() {
     }
 }
 
-//------------------------------Removes last row ------------------------------//
+//------------------------------ Removes last row ------------------------------//
 function removeR() {
     if (numRows > 0) {//if there is smth to delete
         let lastRowI = numRows - 1;//set index to last row number
@@ -72,7 +72,7 @@ function removeR() {
     }
 }
 
-//------------------------------Removes last column ------------------------------//
+//------------------------------ Removes last column ------------------------------//
 function removeC() {
     if (numCols > 0) { //if there is something to delete
         let lastCellI = numCols -1; //set index to last col 
@@ -92,15 +92,19 @@ function removeC() {
     }
 }
 
-
-//sets global var for selected color
+//------------------------------ sets global var for selected color ------------------------------//
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
 }
 
+//------------------------------ Changes colors of ALL cells to color selected ------------------------------//
 function fill(){
-    alert("Clicked Fill All")
+    let cells = document.getElementsByTagName('td')
+    for (let i = 0; i < (numCols * numRows); i++){
+        cells[i].style.background = colorSelected;
+    }
+
 }
 
 function clearAll(){
