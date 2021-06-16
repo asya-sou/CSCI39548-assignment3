@@ -38,6 +38,9 @@ function addR() {
         let cell = row.insertCell(0); //define a cell
         let text = document.createTextNode(':)'); 
         cell.appendChild(text);
+        cell.onclick = function() {
+            cell.style.background = "black";
+        }
     }
     numRows++;//update number of rows
    
@@ -52,6 +55,9 @@ function addC() {
             let cell = grid.rows[i].insertCell(0); //add a cell
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
+            cell.onclick = function() {
+                cell.style.background = "black";
+            }
         }
         numCols++;//update number of cols
     }
@@ -132,10 +138,10 @@ function fillU(){
     }
 }
 //------------------------------ onclick color change ------------------------------//
-var cells = grid.getElementByTagName('td');
+/*var cells = grid.getElementByTagName('td');
 for (let i = 0; i < (numCols * numRows); i++){ //for every cell
         cells[i].onclick = function() {
             cells[i].style.background = "black";
         } //change background color to selected
         //cells[i].id = colorSelected; //assign color id
-}
+}*/
