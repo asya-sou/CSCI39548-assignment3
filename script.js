@@ -102,7 +102,7 @@ function selected(){
 
 function fill(){
     //alert("Clicked Fill All")
-    document.getElementbyId('cellID').style.backgroundColor = "green";
+    document.getElementsByTagName('td').style.background = "green";
     //cells[1].style.backgroundColor = "green";  
       /*
     for (let i = 0; i < numRows; i++) {
