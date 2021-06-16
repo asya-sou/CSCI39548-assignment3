@@ -36,14 +36,17 @@ function addR() {
 
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(0); //define a cell
-        let text = document.createTextNode(':)'); 
-        cell.appendChild(text);
+
+        let text = document.createTextNode(':)');//create text element
+        cell.appendChild(text);//add text to cell
+        
+        //clicked cell behavior
         cell.onclick = function() {
-            cell.style.background = "black";
+            cell.style.background = colorSelected;
+            cell.id = colorSelected;  
         }
     }
     numRows++;//update number of rows
-   
 }
 
 //------------------------------Adds a column ------------------------------//
@@ -53,10 +56,14 @@ function addC() {
     if (numRows > 0) {
         for (let i = 0; i < numRows; i++) { //for every row 
             let cell = grid.rows[i].insertCell(0); //add a cell
-            let text = document.createTextNode(':)'); 
-            cell.appendChild(text);
+
+            let text = document.createTextNode(':)');//create text element
+            cell.appendChild(text);//add text to cell
+
+            //cell clicked behavior
             cell.onclick = function() {
-                cell.style.background = "black";
+                cell.style.background = colorSelected;
+                cell.id = colorSelected;
             }
         }
         numCols++;//update number of cols
@@ -137,11 +144,4 @@ function fillU(){
         }
     }
 }
-//------------------------------ onclick color change ------------------------------//
-/*var cells = grid.getElementByTagName('td');
-for (let i = 0; i < (numCols * numRows); i++){ //for every cell
-        cells[i].onclick = function() {
-            cells[i].style.background = "black";
-        } //change background color to selected
-        //cells[i].id = colorSelected; //assign color id
-}*/
+
