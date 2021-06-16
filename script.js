@@ -16,6 +16,9 @@
   
 //testing base logic for row/cell creation 
 var grid = document.getElementById('grid'); //selected table
+//document.getElementById('td').onclick = function() {
+  // this.style.background = "black";
+//}
 
 //---------------------------------------------//
 let numRows = 0;
@@ -98,7 +101,7 @@ function selected(){
 
 //------------------------------ Changes colors of ALL cells to color selected ------------------------------//
 function fill(){
-    var cells = document.getElementsByTagName('td')
+    var cells = document.getElementsByTagName('td');
     for (let i = 0; i < (numCols * numRows); i++){
         cells[i].style.background = colorSelected;
         cells[i].id = colorSelected;
@@ -107,7 +110,7 @@ function fill(){
 }
 //------------------------------ sets all cell bg color to white ------------------------------//
 function clearAll(){
-    var cells = document.getElementsByTagName('td') //get cells by tag name
+    var cells = document.getElementsByTagName('td'); //get cells by tag name
 
     for (let i = 0; i < (numCols * numRows); i++){ //for every cell
         if(cells[i].id !=='')//if cell id not empty
@@ -119,12 +122,20 @@ function clearAll(){
 //------------------------------ Changes colors of Uncolored cells to color selected ------------------------------//
 function fillU(){
     //alert("Clicked Fill All Uncolored")
-    var cells = document.getElementsByTagName('td') //get cells by tag name
+    var cells = document.getElementsByTagName('td'); //get cells by tag name
 
     for (let i = 0; i < (numCols * numRows); i++){ //for every cell
-        if(cells[i].id ==='')//if cell id empty
+        if(cells[i].id ===''){ //if cell id empty
             cells[i].style.background = colorSelected; //change background color to selected
             cells[i].id = colorSelected; //assign color id
+        }
     }
-
+}
+//------------------------------ onclick color change ------------------------------//
+var cells = grid.getElementByTagName('td');
+for (let i = 0; i < (numCols * numRows); i++){ //for every cell
+        cells[i].onclick = function() {
+            cells[i].style.background = "black";
+        } //change background color to selected
+        //cells[i].id = colorSelected; //assign color id
 }
