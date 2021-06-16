@@ -110,7 +110,12 @@ function fill(){
 function clearAll(){
     alert("Clicked Clear All")
 }
-
+//------------------------------ Changes colors of Uncolored cells to color selected ------------------------------//
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    //alert("Clicked Fill All Uncolored")
+    let cells = document.getElementsByTagName('td')
+    for (let i = 0; i < (numCols * numRows); i++){
+        cells[i].style.background = colorSelected;
+    }
+
 }
