@@ -51,6 +51,7 @@ function addC() {
             let cell = grid.rows[i].insertCell(0); //add a cell
             let text = document.createTextNode(':)'); 
             cell.appendChild(text);
+            cell.id = ('cellID');
         }
         numCols++;//update number of cols
     }
@@ -100,7 +101,15 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    //alert("Clicked Fill All")
+    document.getElementbyId('cellID').style.backgroundColor = "green";
+    //cells[1].style.backgroundColor = "green";  
+      /*
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            grid.rows[i].
+        }
+        */
 }
 
 function clearAll(){
