@@ -36,6 +36,7 @@ function addR() {
 
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(0); //define a cell
+        row.appendChild(cell);//add cell to row dom
 
         let text = document.createTextNode(':)');//create text element
         cell.appendChild(text);//add text to cell
@@ -56,6 +57,7 @@ function addC() {
     if (numRows > 0) {
         for (let i = 0; i < numRows; i++) { //for every row 
             let cell = grid.rows[i].insertCell(0); //add a cell
+            grid.rows[i].appendChild(cell);//add cell to row dom
 
             let text = document.createTextNode(':)');//create text element
             cell.appendChild(text);//add text to cell
@@ -77,9 +79,15 @@ function addC() {
 //------------------------------ Removes last row ------------------------------//
 function removeR() {
     if (numRows > 0) {//if there is smth to delete
+        
         let lastRowI = numRows - 1;//set index to last row number
-
         grid.deleteRow(lastRowI);//removes LAST row
+        
+        //update DOM
+        while (grid.rows[lastRowI].firstChild) {//while any children left, remove cells from DOM
+            grid.rows[lastRowI].removeChild(grid.rows[lastRowI].firstChild)
+        }
+        //grid.removeChild(grid.rows[lastRowI]);//remove rows
 
         numRows--; //decrease number of rows
         numCols = (numRows === 0)? 0 : numCols; //if no rows left - set cols to 0
