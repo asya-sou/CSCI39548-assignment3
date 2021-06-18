@@ -9,7 +9,7 @@ body {
 	margin: auto;
   margin-top: 10px;
 	text-align: center;
-	height: 150px;
+	height: 50px;
 	/*fixed menu top screen*/
 	position: fixed;
 	width: 100%;
@@ -20,7 +20,7 @@ table {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-top: 50px;
 } 
 
 td {
