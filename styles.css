@@ -1,3 +1,7 @@
+
+body {
+  background-color: #191b2b;
+}
 table {
   text-align: center;
   margin-left: auto;
@@ -10,7 +14,6 @@ td {
   height: 40px;
   background-color: white;
   border-radius: 40px;
-  /*-moz-border-radius:6px;*/
 }
 /*
 td:hover {
