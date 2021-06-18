@@ -2,10 +2,25 @@
 body {
   background-color: #191b2b;
 }
+
+.menu {
+	overflow: hidden;
+	background-color:transparent;
+	margin: auto;
+  margin-top: 10px;
+	text-align: center;
+	height: 150px;
+	/*fixed menu top screen*/
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
 table {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
 } 
 
 td {
