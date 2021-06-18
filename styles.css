@@ -1,5 +1,50 @@
+
+body {
+  background-color: #191b2b;
+}
+
+button {
+  background-color: #424a52;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 15 px;
+}
+
+button:hover {
+  background-color: #4f5d6b;
+}
+
+select {
+  background-color: #424a52;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 15 px;
+}
+
+select:hover {
+  background-color: #4f5d6b;
+} 
+
+.menu {
+	overflow: hidden;
+	background-color:transparent;
+	margin: auto;
+  margin-top: 10px;
+	text-align: center;
+	height: 50px;
+	/*fixed menu top screen*/
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+
 table {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 } 
 
 td {
@@ -7,6 +52,7 @@ td {
   width: 40px;
   height: 40px;
   background-color: white;
+  border-radius: 40px;
 }
 /*
 td:hover {

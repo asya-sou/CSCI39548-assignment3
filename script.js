@@ -36,7 +36,6 @@ function addR() {
 
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(0); //define a cell
-        row.appendChild(cell);//add cell to row dom
 
         let text = document.createTextNode(':)');//create text element
         cell.appendChild(text);//add text to cell
@@ -57,7 +56,6 @@ function addC() {
     if (numRows > 0) {
         for (let i = 0; i < numRows; i++) { //for every row 
             let cell = grid.rows[i].insertCell(0); //add a cell
-            grid.rows[i].appendChild(cell);//add cell to row dom
 
             let text = document.createTextNode(':)');//create text element
             cell.appendChild(text);//add text to cell
