@@ -81,14 +81,14 @@ function removeR() {
     if (numRows > 0) {//if there is smth to delete
         
         let lastRowI = numRows - 1;//set index to last row number
-        grid.deleteRow(lastRowI);//removes LAST row
         
         //update DOM
         while (grid.rows[lastRowI].firstChild) {//while any children left, remove cells from DOM
             grid.rows[lastRowI].removeChild(grid.rows[lastRowI].firstChild)
         }
-        //grid.removeChild(grid.rows[lastRowI]);//remove rows
+        grid.removeChild(grid.rows[lastRowI]);//remove rows
 
+        //grid.deleteRow(lastRowI);//removes LAST row
         numRows--; //decrease number of rows
         numCols = (numRows === 0)? 0 : numCols; //if no rows left - set cols to 0
     }
