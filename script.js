@@ -88,7 +88,6 @@ function removeR() {
         }
         grid.removeChild(grid.rows[lastRowI]);//remove rows
 
-        //grid.deleteRow(lastRowI);//removes LAST row
         numRows--; //decrease number of rows
         numCols = (numRows === 0)? 0 : numCols; //if no rows left - set cols to 0
     }
@@ -99,8 +98,9 @@ function removeC() {
     if (numCols > 0) { //if there is something to delete
         let lastCellI = numCols -1; //set index to last col 
 
+        //delete using DOM
         for (let i=0; i < numRows; i++){//for every row
-        grid.rows[i].deleteCell(lastCellI); //removes LAST cell}
+        grid.rows[i].removeChild(grid.rows[i].firstChild); //removes first child cellell}
         }
 
         numCols--; 
