@@ -3,6 +3,21 @@ body {
   background-color: #191b2b;
 }
 
+button {
+  background-color: #424a52;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 15 px;
+}
+
+select {
+  background-color: #424a52;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 15 px;
+}
 .menu {
 	overflow: hidden;
 	background-color:transparent;
