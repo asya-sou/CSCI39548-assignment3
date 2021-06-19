@@ -13,10 +13,10 @@ function addR() {
 
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(0); //define a cell
+        appendNum();
 
-        let text = document.createTextNode((i+1)*numRows);//create text element
-        cell.appendChild(text);//add text to cell
-        
+        //let text = document.createTextNode((i+1)*numRows);//create text element
+        //cell.appendChild(text);//add text to cell
         //clicked cell behavior
         cell.onclick = function() {
             cell.style.background = colorSelected;
@@ -32,9 +32,9 @@ function addC() {
         for (let i = 0; i < numRows; i++) { //for every row 
             let cell = grid.rows[i].insertCell(numCols); //add a cell
 
-            let text = document.createTextNode((i+1)*numCols);//create text element
-            cell.appendChild(text);//add text to cell
-
+            //let text = document.createTextNode((i+1)*numCols);//create text element
+            //cell.appendChild(text);//add text to cell
+            appendNum();
             //cell clicked behavior
             cell.onclick = function() {
                 cell.style.background = colorSelected;
@@ -66,8 +66,6 @@ function removeR() {
     }
 }
 
-
-
 //------------------------------ Removes last column ------------------------------//
 function removeC() {
     if (numCols > 0) { //if there is something to delete
@@ -86,6 +84,17 @@ function removeC() {
             removeR();
         }
         
+    }
+}
+
+//------------------------------ Dynamically append numbers ------------------------------//
+function appendNum() {
+    var cells = document.getElementsByTagName('td');
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+        let text = document.createTextNode((i+1)*(j+1));//create text element
+        cells[i*j].appendChild(text);
+        }
     }
 }
 
