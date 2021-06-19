@@ -1,24 +1,4 @@
-//cells are elements
-//create cell rows 
-//document.getElementById() === $()
-//<td> table data cell element
-//tr - row in a table
-//col - column 
-// @ @ @ @
-// @ @ @ @ 
-// ^ to add col - for each row add 1 elment to end of row
-// ^ to add row - for each col add 1 element to bottom of the col
-// createElement() cells
-// use appendChild() to attach
-// Node.childNodes - will contain all child elements &non-elements of an el on which called
-// Node.lastElementChild - return last child element of an element
-// document.querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.
-  
-//testing base logic for row/cell creation 
 var grid = document.getElementById('grid'); //selected table
-//document.getElementById('td').onclick = function() {
-  // this.style.background = "black";
-//}
 
 //---------------------------------------------//
 let numRows = 0;
@@ -26,9 +6,6 @@ let numCols = 0;
 let colorSelected; 
 //------------------------------Adds a row ------------------------------//
 function addR() {
-//>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
-    //numCols = (numCols === 0)? 1 : numCols; //if 0 columns, set to 1
     if (numCols === 0) {numCols = 1}; //if 0 columns, set to 1
 
     let row = grid.insertRow();//define row
@@ -37,7 +14,7 @@ function addR() {
     for (let i = 0; i < numCols; i++){ //for every column
         let cell = row.insertCell(0); //define a cell
 
-        let text = document.createTextNode(':)');//create text element
+        let text = document.createTextNode((i+1)*numRows);//create text element
         cell.appendChild(text);//add text to cell
         
         //clicked cell behavior
@@ -51,13 +28,11 @@ function addR() {
 
 //------------------------------Adds a column ------------------------------//
 function addC() {
-//>>>>>>>>>>>>>>>>>>>>>>> remove alert
-    //alert('bf call: rows ' +  numRows + ' cols ' + numCols);
     if (numRows > 0) {
         for (let i = 0; i < numRows; i++) { //for every row 
-            let cell = grid.rows[i].insertCell(0); //add a cell
+            let cell = grid.rows[i].insertCell(numCols); //add a cell
 
-            let text = document.createTextNode(':)');//create text element
+            let text = document.createTextNode((i+1)*numCols);//create text element
             cell.appendChild(text);//add text to cell
 
             //cell clicked behavior
@@ -91,6 +66,8 @@ function removeR() {
     }
 }
 
+
+
 //------------------------------ Removes last column ------------------------------//
 function removeC() {
     if (numCols > 0) { //if there is something to delete
@@ -98,7 +75,7 @@ function removeC() {
 
         //delete using DOM
         for (let i=0; i < numRows; i++){//for every row
-        grid.rows[i].removeChild(grid.rows[i].firstChild); //removes first child cellell}
+            grid.rows[i].removeChild(grid.rows[i].firstChild); //removes first child cellell}
         }
 
         numCols--; 
